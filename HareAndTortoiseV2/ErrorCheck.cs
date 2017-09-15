@@ -6,8 +6,8 @@ public class ErrorCheck
 	{
 
 	}
-
-    public int Item(string toCheck, int minVal, int maxVal)//One Item to check
+    //TODO IMPROVE THESE - NOT DUPLICATED?
+    public int String(string toCheck, int minVal, int maxVal)//One string to check
     {
         int check = 0;//temp Var to carry number.
         if (toCheck == "")//Check for blank string
@@ -32,7 +32,23 @@ public class ErrorCheck
         }
     }
 
-    public void Compare(string minSpeed, string maxSpeed, int minVal, int maxVal, out int minChecked, out int maxChecked)//Checking against two values, compare
+    public int Num(int check, int minVal, int maxVal)
+    {
+        if (check < minVal)//less than 100m
+        {
+            return 0;
+        }
+        else if (check > maxVal)//greater than 1000m
+        {
+            return 0;
+        }
+        else//acceptable value
+        {
+            return check;//return checked value to variable
+        }
+    }
+
+    public void CompareString(string minSpeed, string maxSpeed, int minVal, int maxVal, out int minChecked, out int maxChecked)//Checking against two values, compare
     {
         //min\maxCHECK - internal check vars, min\maxCHECKED - returned values
         int minCheck = 0;//temp Var to carry number.
@@ -66,6 +82,30 @@ public class ErrorCheck
                 minChecked = minCheck;
                 maxChecked = maxCheck;//return checked value to variable
             }
+        }
+    }
+
+    public void CompareNum(int minSpeed, int maxSpeed, int minVal, int maxVal, out int minChecked, out int maxChecked)//Checking against two values
+    {
+        if (minCheck < minVal || maxCheck < minVal)//less than 
+        {
+            minChecked = 0;
+            maxChecked = 0;
+        }
+        else if (minCheck > maxVal || maxCheck > maxVal)//greater than 
+        {
+            minChecked = 0;
+            maxChecked = 0;
+        }
+        else if (minCheck > maxCheck || maxCheck < minCheck)
+        {
+            minChecked = 0;
+            maxChecked = 0;
+        }
+        else//acceptable value
+        {
+            minChecked = minCheck;
+            maxChecked = maxCheck;//return checked value to variable
         }
     }
 }

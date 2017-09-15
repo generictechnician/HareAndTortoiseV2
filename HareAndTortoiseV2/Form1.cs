@@ -38,15 +38,16 @@ namespace HareAndTortoiseV2
             int hMaxSpeed = 0;
 
             //In
-            distance = ErrorCheck.item(tbDistance.Text, 100, 1000);
-            SpeedCheck(tbTSpeedMin.Text, tbTSpeedMax.Text, 1, 20, out tMinSpeed, out tMaxSpeed);
-            SpeedCheck(tbHSpeedMin.Text, tbHSpeedMax.Text, 1, 20, out hMinSpeed, out hMaxSpeed);
+            //TODO FIX THIS 
+            distance = ErrorCheck.Num(numDistance., 100, 1000);
+            ErrorCheck.CompareNum(tbTSpeedMin.Text, tbTSpeedMax.Text, 1, 20, out tMinSpeed, out tMaxSpeed);
+            ErrorCheck.CompareNum(tbHSpeedMin.Text, tbHSpeedMax.Text, 1, 20, out hMinSpeed, out hMaxSpeed);
             restInc = ErrorCheck(tbHRestIncrease.Text, 1, 25);
             restStart = ErrorCheck(tbHRestBase.Text, 1, 100);
 
             if (distance == 0 || tMinSpeed == 0 || tMaxSpeed == 0 || hMinSpeed == 0 || hMaxSpeed == 0 || restInc == 0 || restStart == 0)
             {
-                tbWin.Text = "One or more textbox has invalid text. Please fill in all boxes and ensure minimum speeds are lower than maximum speeds";
+                lblOut.Text = "One or more textbox has invalid text. Please fill in all boxes and ensure minimum speeds are lower than maximum speeds";
             }
             else
             {
