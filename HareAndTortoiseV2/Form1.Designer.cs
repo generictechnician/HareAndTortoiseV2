@@ -41,17 +41,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnRace = new System.Windows.Forms.Button();
             this.lblOut = new System.Windows.Forms.Label();
+            this.numHRestInc = new System.Windows.Forms.NumericUpDown();
+            this.lblHRestInc = new System.Windows.Forms.Label();
+            this.numHRestBase = new System.Windows.Forms.NumericUpDown();
+            this.lblhRestBase = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numDistance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHRestInc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHRestBase)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.lblTitle.Location = new System.Drawing.Point(12, 9);
+            this.lblTitle.Location = new System.Drawing.Point(12, 8);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(302, 23);
             this.lblTitle.TabIndex = 1;
@@ -60,8 +67,9 @@
             // 
             // lblDistance
             // 
+            this.lblDistance.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblDistance.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lblDistance.Location = new System.Drawing.Point(12, 62);
+            this.lblDistance.Location = new System.Drawing.Point(12, 61);
             this.lblDistance.Name = "lblDistance";
             this.lblDistance.Size = new System.Drawing.Size(123, 18);
             this.lblDistance.TabIndex = 0;
@@ -69,7 +77,8 @@
             // 
             // numDistance
             // 
-            this.numDistance.Location = new System.Drawing.Point(141, 60);
+            this.numDistance.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numDistance.Location = new System.Drawing.Point(141, 59);
             this.numDistance.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -91,7 +100,8 @@
             // 
             // lblHMin
             // 
-            this.lblHMin.Location = new System.Drawing.Point(12, 85);
+            this.lblHMin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblHMin.Location = new System.Drawing.Point(12, 84);
             this.lblHMin.Name = "lblHMin";
             this.lblHMin.Size = new System.Drawing.Size(123, 23);
             this.lblHMin.TabIndex = 3;
@@ -99,7 +109,8 @@
             // 
             // numHMin
             // 
-            this.numHMin.Location = new System.Drawing.Point(141, 86);
+            this.numHMin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numHMin.Location = new System.Drawing.Point(141, 85);
             this.numHMin.Maximum = new decimal(new int[] {
             20,
             0,
@@ -121,7 +132,8 @@
             // 
             // numHMax
             // 
-            this.numHMax.Location = new System.Drawing.Point(141, 112);
+            this.numHMax.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numHMax.Location = new System.Drawing.Point(141, 111);
             this.numHMax.Maximum = new decimal(new int[] {
             20,
             0,
@@ -143,7 +155,8 @@
             // 
             // lblHMax
             // 
-            this.lblHMax.Location = new System.Drawing.Point(12, 111);
+            this.lblHMax.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblHMax.Location = new System.Drawing.Point(12, 110);
             this.lblHMax.Name = "lblHMax";
             this.lblHMax.Size = new System.Drawing.Size(123, 21);
             this.lblHMax.TabIndex = 5;
@@ -151,7 +164,8 @@
             // 
             // numTMax
             // 
-            this.numTMax.Location = new System.Drawing.Point(141, 161);
+            this.numTMax.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numTMax.Location = new System.Drawing.Point(141, 160);
             this.numTMax.Maximum = new decimal(new int[] {
             20,
             0,
@@ -173,7 +187,8 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(12, 163);
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Location = new System.Drawing.Point(12, 162);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 18);
             this.label1.TabIndex = 9;
@@ -181,7 +196,8 @@
             // 
             // numTMin
             // 
-            this.numTMin.Location = new System.Drawing.Point(141, 135);
+            this.numTMin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numTMin.Location = new System.Drawing.Point(141, 134);
             this.numTMin.Maximum = new decimal(new int[] {
             20,
             0,
@@ -203,7 +219,8 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(12, 137);
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Location = new System.Drawing.Point(12, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 18);
             this.label2.TabIndex = 7;
@@ -211,7 +228,8 @@
             // 
             // btnRace
             // 
-            this.btnRace.Location = new System.Drawing.Point(226, 195);
+            this.btnRace.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnRace.Location = new System.Drawing.Point(218, 235);
             this.btnRace.Name = "btnRace";
             this.btnRace.Size = new System.Drawing.Size(96, 54);
             this.btnRace.TabIndex = 11;
@@ -221,16 +239,76 @@
             // 
             // lblOut
             // 
-            this.lblOut.Location = new System.Drawing.Point(17, 195);
+            this.lblOut.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblOut.Location = new System.Drawing.Point(17, 235);
             this.lblOut.Name = "lblOut";
             this.lblOut.Size = new System.Drawing.Size(186, 54);
             this.lblOut.TabIndex = 12;
+            this.lblOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // numHRestInc
+            // 
+            this.numHRestInc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numHRestInc.Location = new System.Drawing.Point(141, 212);
+            this.numHRestInc.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numHRestInc.Name = "numHRestInc";
+            this.numHRestInc.Size = new System.Drawing.Size(62, 20);
+            this.numHRestInc.TabIndex = 16;
+            this.numHRestInc.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            // 
+            // lblHRestInc
+            // 
+            this.lblHRestInc.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblHRestInc.Location = new System.Drawing.Point(12, 214);
+            this.lblHRestInc.Name = "lblHRestInc";
+            this.lblHRestInc.Size = new System.Drawing.Size(131, 18);
+            this.lblHRestInc.TabIndex = 15;
+            this.lblHRestInc.Text = "Hare Rest Increase";
+            // 
+            // numHRestBase
+            // 
+            this.numHRestBase.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numHRestBase.Location = new System.Drawing.Point(141, 186);
+            this.numHRestBase.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numHRestBase.Name = "numHRestBase";
+            this.numHRestBase.Size = new System.Drawing.Size(62, 20);
+            this.numHRestBase.TabIndex = 14;
+            this.numHRestBase.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            // 
+            // lblhRestBase
+            // 
+            this.lblhRestBase.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblhRestBase.Location = new System.Drawing.Point(12, 188);
+            this.lblhRestBase.Name = "lblhRestBase";
+            this.lblhRestBase.Size = new System.Drawing.Size(123, 18);
+            this.lblhRestBase.TabIndex = 13;
+            this.lblhRestBase.Text = "Hare Rest Base";
             // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 261);
+            this.ClientSize = new System.Drawing.Size(334, 301);
+            this.Controls.Add(this.numHRestInc);
+            this.Controls.Add(this.lblHRestInc);
+            this.Controls.Add(this.numHRestBase);
+            this.Controls.Add(this.lblhRestBase);
             this.Controls.Add(this.lblOut);
             this.Controls.Add(this.btnRace);
             this.Controls.Add(this.numTMax);
@@ -244,6 +322,10 @@
             this.Controls.Add(this.numDistance);
             this.Controls.Add(this.lblDistance);
             this.Controls.Add(this.lblTitle);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(350, 340);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(350, 340);
             this.Name = "Form";
             this.Text = "The Hare And The Tortoise Racing";
             ((System.ComponentModel.ISupportInitialize)(this.numDistance)).EndInit();
@@ -251,6 +333,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numHMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHRestInc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numHRestBase)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -269,6 +353,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRace;
         private System.Windows.Forms.Label lblOut;
+        private System.Windows.Forms.NumericUpDown numHRestInc;
+        private System.Windows.Forms.Label lblHRestInc;
+        private System.Windows.Forms.NumericUpDown numHRestBase;
+        private System.Windows.Forms.Label lblhRestBase;
     }
 }
 

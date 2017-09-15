@@ -24,7 +24,7 @@ namespace HareAndTortoiseV2
             InitializeComponent();
         }
 
-        private void btnRace_Click(object sender, EventArgs e)
+        public void btnRace_Click(object sender, EventArgs e)
         {
             //Variables
             int distance = 0;
@@ -39,20 +39,20 @@ namespace HareAndTortoiseV2
 
             //In
             //TODO FIX THIS 
-            distance = ErrorCheck.Num(numDistance., 100, 1000);
-            ErrorCheck.CompareNum(tbTSpeedMin.Text, tbTSpeedMax.Text, 1, 20, out tMinSpeed, out tMaxSpeed);
-            ErrorCheck.CompareNum(tbHSpeedMin.Text, tbHSpeedMax.Text, 1, 20, out hMinSpeed, out hMaxSpeed);
-            restInc = ErrorCheck(tbHRestIncrease.Text, 1, 25);
-            restStart = ErrorCheck(tbHRestBase.Text, 1, 100);
+            ErrorCheck.Num((int)numDistance.Value, 100, 1000, out distance);
+            ErrorCheck.CompareNum((int)numTMin.Value, (int)numTMax.Value, 1, 20, out tMinSpeed, out tMaxSpeed);
+            ErrorCheck.CompareNum((int)numHMin.Value, (int)numHMax.Value, 1, 20, out hMinSpeed, out hMaxSpeed);
+            ErrorCheck.Num((int)numHRestInc.Value, 1, 25, out restInc);
+            ErrorCheck.Num((int)numHRestBase.Value, 1, 100, out restStart);
 
-            if (distance == 0 || tMinSpeed == 0 || tMaxSpeed == 0 || hMinSpeed == 0 || hMaxSpeed == 0 || restInc == 0 || restStart == 0)
+            Race.Go(distance, tMinSpeed, tMaxSpeed, hMinSpeed, hMaxSpeed, restInc, restStart);
+
+            do
             {
-                lblOut.Text = "One or more textbox has invalid text. Please fill in all boxes and ensure minimum speeds are lower than maximum speeds";
-            }
-            else
-            {
-                Race(distance, tMinSpeed, tMaxSpeed, hMinSpeed, hMaxSpeed, restInc, restStart);
-            }
+
+            } while (Globals.winner == "");
+            lblOut.Text = Globals.winner;
+
         }
     }
 }

@@ -1,8 +1,13 @@
-﻿using System;
+﻿using HareAndTortoiseV2;
+using System;
 
 public class Race
 {
-	public Race(int distance, int tMinSpeed, int tMaxSpeed, int hMinSpeed, int hMaxSpeed, int restIncrease, int restChance)
+    public Race()
+    {
+
+    }
+	public static void Go(int distance, int tMinSpeed, int tMaxSpeed, int hMinSpeed, int hMaxSpeed, int restIncrease, int restChance)
 	{
         int tLocation = 0;
         int hlocation = 0;
@@ -33,25 +38,20 @@ public class Race
                     restChance = 0;
                 }
             }
-            tbWin.Text = hlocation.ToString();
         }
 
         //Out
         if ((tLocation >= distance) && (hlocation >= distance))
         {
-            tbWin.Text = "Its a Draw!";
+            Globals.winner = "It's a Draw!";
         }
         else if (tLocation >= distance)
         {
-            tbWin.Text = "Tortoise Wins!";
-            tWins += 1;
-            lblTWins.Text = tText + tWins;
+            Globals.winner = "Tortoise Wins!";
         }
         else if (hlocation >= distance)
         {
-            tbWin.Text = "Hare Wins!";
-            hWins += 1;
-            lblHWins.Text = hText + hWins;
+            Globals.winner = "Hare Wins!";
         }
     }
 }

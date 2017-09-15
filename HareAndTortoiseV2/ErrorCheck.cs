@@ -7,48 +7,35 @@ public class ErrorCheck
 
 	}
     //TODO IMPROVE THESE - NOT DUPLICATED?
-    public int String(string toCheck, int minVal, int maxVal)//One string to check
+    public static void String(string check, int minVal, int maxVal, out int WasChecked)//One string to check
     {
-        int check = 0;//temp Var to carry number.
-        if (toCheck == "")//Check for blank string
+        if (check == "")//Check for blank string
         {
-            return 0;
+            WasChecked = 0;
         }
         else
         {
-            check = Int16.Parse(toCheck);//convert to integer
-            if (check < minVal)//less than 100m
-            {
-                return 0;
-            }
-            else if (check > maxVal)//greater than 1000m
-            {
-                return 0;
-            }
-            else//acceptable value
-            {
-                return check;//return checked value to variable
-            }
+            Num(Int16.Parse(check), minVal, maxVal, out WasChecked);
         }
     }
 
-    public int Num(int check, int minVal, int maxVal)
+    public static void Num(int toCheck, int minVal, int maxVal, out int hasChecked)
     {
-        if (check < minVal)//less than 100m
+        if (toCheck < minVal)//less than 100m
         {
-            return 0;
+            hasChecked = 0;
         }
-        else if (check > maxVal)//greater than 1000m
+        else if (toCheck > maxVal)//greater than 1000m
         {
-            return 0;
+            hasChecked = 0;
         }
         else//acceptable value
         {
-            return check;//return checked value to variable
+            hasChecked = toCheck;//return checked value to variable
         }
     }
 
-    public void CompareString(string minSpeed, string maxSpeed, int minVal, int maxVal, out int minChecked, out int maxChecked)//Checking against two values, compare
+    public static void CompareString(string minSpeed, string maxSpeed, int minVal, int maxVal, out int minChecked, out int maxChecked)//Checking against two values, compare
     {
         //min\maxCHECK - internal check vars, min\maxCHECKED - returned values
         int minCheck = 0;//temp Var to carry number.
@@ -62,50 +49,31 @@ public class ErrorCheck
         {
             minCheck = Int16.Parse(minSpeed);//convert to integer
             maxCheck = Int16.Parse(maxSpeed);
-            if (minCheck < minVal || maxCheck < minVal)//less than 
-            {
-                minChecked = 0;
-                maxChecked = 0;
-            }
-            else if (minCheck > maxVal || maxCheck > maxVal)//greater than 
-            {
-                minChecked = 0;
-                maxChecked = 0;
-            }
-            else if (minCheck > maxCheck || maxCheck < minCheck)
-            {
-                minChecked = 0;
-                maxChecked = 0;
-            }
-            else//acceptable value
-            {
-                minChecked = minCheck;
-                maxChecked = maxCheck;//return checked value to variable
-            }
+            CompareNum(minCheck, maxCheck, minVal, maxVal, out minChecked, out maxChecked);
         }
     }
 
-    public void CompareNum(int minSpeed, int maxSpeed, int minVal, int maxVal, out int minChecked, out int maxChecked)//Checking against two values
+    public static void CompareNum(int minSpeed, int maxSpeed, int minVal, int maxVal, out int minCheck, out int maxCheck)//Checking against two values
     {
-        if (minCheck < minVal || maxCheck < minVal)//less than 
+        if (minSpeed < minVal || maxSpeed < minVal)//less than 
         {
-            minChecked = 0;
-            maxChecked = 0;
+            minCheck = 0;
+            maxCheck = 0;
         }
-        else if (minCheck > maxVal || maxCheck > maxVal)//greater than 
+        else if (minSpeed > maxVal || maxSpeed > maxVal)//greater than 
         {
-            minChecked = 0;
-            maxChecked = 0;
+            minCheck = 0;
+            maxCheck = 0;
         }
-        else if (minCheck > maxCheck || maxCheck < minCheck)
+        else if (minSpeed > maxSpeed || maxSpeed < minSpeed)
         {
-            minChecked = 0;
-            maxChecked = 0;
+            minCheck = 0;
+            maxCheck = 0;
         }
         else//acceptable value
         {
-            minChecked = minCheck;
-            maxChecked = maxCheck;//return checked value to variable
+            minCheck = minSpeed;
+            maxCheck = maxSpeed;//return checked value to variable
         }
     }
 }
