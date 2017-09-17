@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace HareAndTortoiseV2
 {
-    static class Globals
+    class Globals
     {
-        public static string winner = "";
+        public static string Winner = "";
     }
 }

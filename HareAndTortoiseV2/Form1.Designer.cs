@@ -45,6 +45,10 @@
             this.lblHRestInc = new System.Windows.Forms.Label();
             this.numHRestBase = new System.Windows.Forms.NumericUpDown();
             this.lblhRestBase = new System.Windows.Forms.Label();
+            this.lblHWinsInfo = new System.Windows.Forms.Label();
+            this.lblTWinsInfo = new System.Windows.Forms.Label();
+            this.lblHWins = new System.Windows.Forms.Label();
+            this.lblTWins = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numDistance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHMax)).BeginInit();
@@ -300,11 +304,53 @@
             this.lblhRestBase.TabIndex = 13;
             this.lblhRestBase.Text = "Hare Rest Base";
             // 
+            // lblHWinsInfo
+            // 
+            this.lblHWinsInfo.Location = new System.Drawing.Point(221, 54);
+            this.lblHWinsInfo.Name = "lblHWinsInfo";
+            this.lblHWinsInfo.Size = new System.Drawing.Size(92, 25);
+            this.lblHWinsInfo.TabIndex = 17;
+            this.lblHWinsInfo.Text = "Hare Wins:";
+            this.lblHWinsInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTWinsInfo
+            // 
+            this.lblTWinsInfo.Location = new System.Drawing.Point(221, 129);
+            this.lblTWinsInfo.Name = "lblTWinsInfo";
+            this.lblTWinsInfo.Size = new System.Drawing.Size(92, 25);
+            this.lblTWinsInfo.TabIndex = 18;
+            this.lblTWinsInfo.Text = "Tortoise Wins:";
+            this.lblTWinsInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblHWins
+            // 
+            this.lblHWins.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHWins.Location = new System.Drawing.Point(224, 79);
+            this.lblHWins.Name = "lblHWins";
+            this.lblHWins.Size = new System.Drawing.Size(89, 50);
+            this.lblHWins.TabIndex = 19;
+            this.lblHWins.Text = "0";
+            this.lblHWins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTWins
+            // 
+            this.lblTWins.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTWins.Location = new System.Drawing.Point(224, 156);
+            this.lblTWins.Name = "lblTWins";
+            this.lblTWins.Size = new System.Drawing.Size(89, 50);
+            this.lblTWins.TabIndex = 20;
+            this.lblTWins.Text = "0";
+            this.lblTWins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 301);
+            this.Controls.Add(this.lblTWins);
+            this.Controls.Add(this.lblHWins);
+            this.Controls.Add(this.lblTWinsInfo);
+            this.Controls.Add(this.lblHWinsInfo);
             this.Controls.Add(this.numHRestInc);
             this.Controls.Add(this.lblHRestInc);
             this.Controls.Add(this.numHRestBase);
@@ -357,6 +403,10 @@
         private System.Windows.Forms.Label lblHRestInc;
         private System.Windows.Forms.NumericUpDown numHRestBase;
         private System.Windows.Forms.Label lblhRestBase;
+        private System.Windows.Forms.Label lblHWinsInfo;
+        private System.Windows.Forms.Label lblTWinsInfo;
+        private System.Windows.Forms.Label lblHWins;
+        private System.Windows.Forms.Label lblTWins;
     }
 }
 

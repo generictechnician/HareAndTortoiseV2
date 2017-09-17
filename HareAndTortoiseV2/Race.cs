@@ -43,15 +43,15 @@ public class Race
         //Out
         if ((tLocation >= distance) && (hlocation >= distance))
         {
-            Globals.winner = "It's a Draw!";
+            Globals.Winner = "draw";
         }
         else if (tLocation >= distance)
         {
-            Globals.winner = "Tortoise Wins!";
+            Globals.Winner = "tortoise";
         }
         else if (hlocation >= distance)
         {
-            Globals.winner = "Hare Wins!";
+            Globals.Winner = "hare";
         }
     }
 }

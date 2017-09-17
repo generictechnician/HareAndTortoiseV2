@@ -16,9 +16,6 @@ namespace HareAndTortoiseV2
         int hWins = 0;
         int tWins = 0;
 
-        const string hText = "Hare Wins: ";
-        const string tText = "Tortoise Wins: ";
-
         public Form()
         {
             InitializeComponent();
@@ -50,8 +47,27 @@ namespace HareAndTortoiseV2
             do
             {
 
-            } while (Globals.winner == "");
-            lblOut.Text = Globals.winner;
+            } while (Globals.Winner == "");
+
+            if (Globals.Winner == "draw")
+            {
+                lblOut.Text = "It's a Draw!";
+                Globals.Winner = "";
+            }
+            else if (Globals.Winner == "tortoise")
+            {
+                lblOut.Text = "Tortoise Wins!";
+                tWins++;
+                lblTWins.Text = tWins.ToString();
+                Globals.Winner = "";
+            }
+            else if (Globals.Winner == "hare")
+            {
+                lblOut.Text = "Hare Wins!";
+                hWins++;
+                lblHWins.Text = hWins.ToString();
+                Globals.Winner = "";
+            }
 
         }
     }
