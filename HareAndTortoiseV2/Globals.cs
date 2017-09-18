@@ -8,6 +8,9 @@ namespace HareAndTortoiseV2
 {
     class Globals
     {
-        public static string Winner = "";
+        public static int[] names;
+        public static int[] speed;
+        public static int[] endurance;
+        public static int[] wins;
     }
 }

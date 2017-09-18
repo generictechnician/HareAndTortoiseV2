@@ -31,31 +31,13 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblDistance = new System.Windows.Forms.Label();
             this.numDistance = new System.Windows.Forms.NumericUpDown();
-            this.lblHMin = new System.Windows.Forms.Label();
-            this.numHMin = new System.Windows.Forms.NumericUpDown();
-            this.numHMax = new System.Windows.Forms.NumericUpDown();
-            this.lblHMax = new System.Windows.Forms.Label();
-            this.numTMax = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
-            this.numTMin = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnRace = new System.Windows.Forms.Button();
             this.lblOut = new System.Windows.Forms.Label();
-            this.numHRestInc = new System.Windows.Forms.NumericUpDown();
-            this.lblHRestInc = new System.Windows.Forms.Label();
-            this.numHRestBase = new System.Windows.Forms.NumericUpDown();
-            this.lblhRestBase = new System.Windows.Forms.Label();
-            this.lblHWinsInfo = new System.Windows.Forms.Label();
-            this.lblTWinsInfo = new System.Windows.Forms.Label();
-            this.lblHWins = new System.Windows.Forms.Label();
-            this.lblTWins = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.numMinSpeed = new System.Windows.Forms.NumericUpDown();
+            this.lblMinSpeed = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numDistance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHMin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTMax)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTMin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHRestInc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHRestBase)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinSpeed)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -75,14 +57,14 @@
             this.lblDistance.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblDistance.Location = new System.Drawing.Point(12, 61);
             this.lblDistance.Name = "lblDistance";
-            this.lblDistance.Size = new System.Drawing.Size(123, 18);
+            this.lblDistance.Size = new System.Drawing.Size(86, 18);
             this.lblDistance.TabIndex = 0;
-            this.lblDistance.Text = "Distance";
+            this.lblDistance.Text = "Race Distance:";
             // 
             // numDistance
             // 
             this.numDistance.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numDistance.Location = new System.Drawing.Point(141, 59);
+            this.numDistance.Location = new System.Drawing.Point(104, 59);
             this.numDistance.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -101,134 +83,6 @@
             0,
             0,
             0});
-            // 
-            // lblHMin
-            // 
-            this.lblHMin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblHMin.Location = new System.Drawing.Point(12, 84);
-            this.lblHMin.Name = "lblHMin";
-            this.lblHMin.Size = new System.Drawing.Size(123, 23);
-            this.lblHMin.TabIndex = 3;
-            this.lblHMin.Text = "Hare Minimum Speed";
-            // 
-            // numHMin
-            // 
-            this.numHMin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numHMin.Location = new System.Drawing.Point(141, 85);
-            this.numHMin.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.numHMin.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numHMin.Name = "numHMin";
-            this.numHMin.Size = new System.Drawing.Size(62, 20);
-            this.numHMin.TabIndex = 4;
-            this.numHMin.Value = new decimal(new int[] {
-            8,
-            0,
-            0,
-            0});
-            // 
-            // numHMax
-            // 
-            this.numHMax.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numHMax.Location = new System.Drawing.Point(141, 111);
-            this.numHMax.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.numHMax.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numHMax.Name = "numHMax";
-            this.numHMax.Size = new System.Drawing.Size(62, 20);
-            this.numHMax.TabIndex = 6;
-            this.numHMax.Value = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            // 
-            // lblHMax
-            // 
-            this.lblHMax.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblHMax.Location = new System.Drawing.Point(12, 110);
-            this.lblHMax.Name = "lblHMax";
-            this.lblHMax.Size = new System.Drawing.Size(123, 21);
-            this.lblHMax.TabIndex = 5;
-            this.lblHMax.Text = "Hare Maximum Speed";
-            // 
-            // numTMax
-            // 
-            this.numTMax.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numTMax.Location = new System.Drawing.Point(141, 160);
-            this.numTMax.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.numTMax.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numTMax.Name = "numTMax";
-            this.numTMax.Size = new System.Drawing.Size(62, 20);
-            this.numTMax.TabIndex = 10;
-            this.numTMax.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Location = new System.Drawing.Point(12, 162);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 18);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Tortoise Maximum Speed";
-            // 
-            // numTMin
-            // 
-            this.numTMin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numTMin.Location = new System.Drawing.Point(141, 134);
-            this.numTMin.Maximum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.numTMin.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numTMin.Name = "numTMin";
-            this.numTMin.Size = new System.Drawing.Size(62, 20);
-            this.numTMin.TabIndex = 8;
-            this.numTMin.Value = new decimal(new int[] {
-            6,
-            0,
-            0,
-            0});
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.Location = new System.Drawing.Point(12, 136);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(123, 18);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Tortoise Minimum Speed";
             // 
             // btnRace
             // 
@@ -250,121 +104,58 @@
             this.lblOut.TabIndex = 12;
             this.lblOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // numHRestInc
+            // richTextBox1
             // 
-            this.numHRestInc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numHRestInc.Location = new System.Drawing.Point(141, 212);
-            this.numHRestInc.Minimum = new decimal(new int[] {
+            this.richTextBox1.Location = new System.Drawing.Point(20, 112);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(294, 105);
+            this.richTextBox1.TabIndex = 13;
+            this.richTextBox1.Text = "";
+            // 
+            // numMinSpeed
+            // 
+            this.numMinSpeed.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numMinSpeed.Location = new System.Drawing.Point(104, 86);
+            this.numMinSpeed.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.numMinSpeed.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numHRestInc.Name = "numHRestInc";
-            this.numHRestInc.Size = new System.Drawing.Size(62, 20);
-            this.numHRestInc.TabIndex = 16;
-            this.numHRestInc.Value = new decimal(new int[] {
-            15,
+            this.numMinSpeed.Name = "numMinSpeed";
+            this.numMinSpeed.Size = new System.Drawing.Size(62, 20);
+            this.numMinSpeed.TabIndex = 15;
+            this.numMinSpeed.Value = new decimal(new int[] {
+            2,
             0,
             0,
             0});
             // 
-            // lblHRestInc
+            // lblMinSpeed
             // 
-            this.lblHRestInc.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblHRestInc.Location = new System.Drawing.Point(12, 214);
-            this.lblHRestInc.Name = "lblHRestInc";
-            this.lblHRestInc.Size = new System.Drawing.Size(131, 18);
-            this.lblHRestInc.TabIndex = 15;
-            this.lblHRestInc.Text = "Hare Rest Increase";
-            // 
-            // numHRestBase
-            // 
-            this.numHRestBase.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.numHRestBase.Location = new System.Drawing.Point(141, 186);
-            this.numHRestBase.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numHRestBase.Name = "numHRestBase";
-            this.numHRestBase.Size = new System.Drawing.Size(62, 20);
-            this.numHRestBase.TabIndex = 14;
-            this.numHRestBase.Value = new decimal(new int[] {
-            25,
-            0,
-            0,
-            0});
-            // 
-            // lblhRestBase
-            // 
-            this.lblhRestBase.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblhRestBase.Location = new System.Drawing.Point(12, 188);
-            this.lblhRestBase.Name = "lblhRestBase";
-            this.lblhRestBase.Size = new System.Drawing.Size(123, 18);
-            this.lblhRestBase.TabIndex = 13;
-            this.lblhRestBase.Text = "Hare Rest Base";
-            // 
-            // lblHWinsInfo
-            // 
-            this.lblHWinsInfo.Location = new System.Drawing.Point(221, 54);
-            this.lblHWinsInfo.Name = "lblHWinsInfo";
-            this.lblHWinsInfo.Size = new System.Drawing.Size(92, 25);
-            this.lblHWinsInfo.TabIndex = 17;
-            this.lblHWinsInfo.Text = "Hare Wins:";
-            this.lblHWinsInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTWinsInfo
-            // 
-            this.lblTWinsInfo.Location = new System.Drawing.Point(221, 129);
-            this.lblTWinsInfo.Name = "lblTWinsInfo";
-            this.lblTWinsInfo.Size = new System.Drawing.Size(92, 25);
-            this.lblTWinsInfo.TabIndex = 18;
-            this.lblTWinsInfo.Text = "Tortoise Wins:";
-            this.lblTWinsInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblHWins
-            // 
-            this.lblHWins.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHWins.Location = new System.Drawing.Point(224, 79);
-            this.lblHWins.Name = "lblHWins";
-            this.lblHWins.Size = new System.Drawing.Size(89, 50);
-            this.lblHWins.TabIndex = 19;
-            this.lblHWins.Text = "0";
-            this.lblHWins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTWins
-            // 
-            this.lblTWins.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTWins.Location = new System.Drawing.Point(224, 156);
-            this.lblTWins.Name = "lblTWins";
-            this.lblTWins.Size = new System.Drawing.Size(89, 50);
-            this.lblTWins.TabIndex = 20;
-            this.lblTWins.Text = "0";
-            this.lblTWins.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMinSpeed.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblMinSpeed.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblMinSpeed.Location = new System.Drawing.Point(12, 88);
+            this.lblMinSpeed.Name = "lblMinSpeed";
+            this.lblMinSpeed.Size = new System.Drawing.Size(86, 18);
+            this.lblMinSpeed.TabIndex = 14;
+            this.lblMinSpeed.Text = "Minimum Speed:";
             // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 301);
-            this.Controls.Add(this.lblTWins);
-            this.Controls.Add(this.lblHWins);
-            this.Controls.Add(this.lblTWinsInfo);
-            this.Controls.Add(this.lblHWinsInfo);
-            this.Controls.Add(this.numHRestInc);
-            this.Controls.Add(this.lblHRestInc);
-            this.Controls.Add(this.numHRestBase);
-            this.Controls.Add(this.lblhRestBase);
+            this.Controls.Add(this.numMinSpeed);
+            this.Controls.Add(this.lblMinSpeed);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lblOut);
             this.Controls.Add(this.btnRace);
-            this.Controls.Add(this.numTMax);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.numTMin);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.numHMax);
-            this.Controls.Add(this.lblHMax);
-            this.Controls.Add(this.numHMin);
-            this.Controls.Add(this.lblHMin);
             this.Controls.Add(this.numDistance);
             this.Controls.Add(this.lblDistance);
             this.Controls.Add(this.lblTitle);
@@ -375,12 +166,7 @@
             this.Name = "Form";
             this.Text = "The Hare And The Tortoise Racing";
             ((System.ComponentModel.ISupportInitialize)(this.numDistance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHMin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTMax)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numTMin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHRestInc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numHRestBase)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMinSpeed)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -389,24 +175,11 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblDistance;
         private System.Windows.Forms.NumericUpDown numDistance;
-        private System.Windows.Forms.Label lblHMin;
-        private System.Windows.Forms.NumericUpDown numHMin;
-        private System.Windows.Forms.NumericUpDown numHMax;
-        private System.Windows.Forms.Label lblHMax;
-        private System.Windows.Forms.NumericUpDown numTMax;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numTMin;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRace;
         private System.Windows.Forms.Label lblOut;
-        private System.Windows.Forms.NumericUpDown numHRestInc;
-        private System.Windows.Forms.Label lblHRestInc;
-        private System.Windows.Forms.NumericUpDown numHRestBase;
-        private System.Windows.Forms.Label lblhRestBase;
-        private System.Windows.Forms.Label lblHWinsInfo;
-        private System.Windows.Forms.Label lblTWinsInfo;
-        private System.Windows.Forms.Label lblHWins;
-        private System.Windows.Forms.Label lblTWins;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.NumericUpDown numMinSpeed;
+        private System.Windows.Forms.Label lblMinSpeed;
     }
 }
 

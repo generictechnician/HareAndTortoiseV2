@@ -7,51 +7,55 @@ public class Race
     {
 
     }
-	public static void Go(int distance, int tMinSpeed, int tMaxSpeed, int hMinSpeed, int hMaxSpeed, int restIncrease, int restChance)
+	public static void Go(int distance, int MinSpeed)//arrays are located through Globals.*
 	{
-        int tLocation = 0;
-        int hlocation = 0;
-        int restRand = 0;
+        int noOfRacers = Globals.speed.Length;
+
+        bool winner = false;
 
 
         Random random = new Random();
 
-        //Process
-        while ((tLocation <= distance) && (hlocation <= distance))
+        //create local arrays
+        int[] location;
+        int[] speedMax;
+        int[] stamina;
+
+        speedMax = new int[noOfRacers];
+        location = new int[noOfRacers];
+        stamina = new int[noOfRacers];
+
+        //add to local arrays 
+        //IS THERE ANY POINT TO THIS? TEST WHEN COMPLETE
+        for (int i = 0; i < noOfRacers; i++)
         {
-            tLocation += random.Next(tMinSpeed, tMaxSpeed);//always change
-            restRand = random.Next(0, 100);//generate rest chance (0 -> 100%)
-            if (restRand <= (100 - restChance))
-            {
-                hlocation += random.Next(hMinSpeed, hMaxSpeed);
-                restChance += restIncrease;
-                if (restChance > 100)//Stops over 100% chance
-                {
-                    restChance = 100;
-                }
-            }
-            else
-            {
-                restChance -= (restIncrease * 2);
-                if (restChance < 1) //Stops negative chance
-                {
-                    restChance = 0;
-                }
-            }
+            speedMax[i] = Globals.speed[i];
+        }
+        for (int i = 0; i < noOfRacers; i++)
+        {
+            stamina[i] = Globals.endurance[i];
         }
 
-        //Out
-        if ((tLocation >= distance) && (hlocation >= distance))
+        //Process
+        while (winner == false)
         {
-            Globals.Winner = "draw";
-        }
-        else if (tLocation >= distance)
-        {
-            Globals.Winner = "tortoise";
-        }
-        else if (hlocation >= distance)
-        {
-            Globals.Winner = "hare";
+            for (int i = 0; i < noOfRacers; i++)
+            {
+                if (stamina[i] != 0)
+                {
+                    location[i] += random.Next(MinSpeed, speedMax[i]);
+                    stamina[i]--;
+                }
+                else
+                {
+                    stamina[i] += Globals.endurance[i];
+                }
+                if (location[i] == distance)
+                {
+                    winner = true;
+                    Globals.wins[i]++;
+                }
+            }
         }
     }
 }

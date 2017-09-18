@@ -25,50 +25,16 @@ namespace HareAndTortoiseV2
         {
             //Variables
             int distance = 0;
-            int restInc;
-            int restStart;
-            //tortoise
-            int tMinSpeed = 0;
-            int tMaxSpeed = 0;
-            //hare
-            int hMinSpeed = 0;
-            int hMaxSpeed = 0;
+            int MinSpeed = 0;
 
             //In
-            //TODO FIX THIS 
-            ErrorCheck.Num((int)numDistance.Value, 100, 1000, out distance);
-            ErrorCheck.CompareNum((int)numTMin.Value, (int)numTMax.Value, 1, 20, out tMinSpeed, out tMaxSpeed);
-            ErrorCheck.CompareNum((int)numHMin.Value, (int)numHMax.Value, 1, 20, out hMinSpeed, out hMaxSpeed);
-            ErrorCheck.Num((int)numHRestInc.Value, 1, 25, out restInc);
-            ErrorCheck.Num((int)numHRestBase.Value, 1, 100, out restStart);
 
-            Race.Go(distance, tMinSpeed, tMaxSpeed, hMinSpeed, hMaxSpeed, restInc, restStart);
 
-            do
-            {
 
-            } while (Globals.Winner == "");
+            distance = (int)numDistance.Value;
+            MinSpeed = (int)numMinSpeed.Value;
 
-            if (Globals.Winner == "draw")
-            {
-                lblOut.Text = "It's a Draw!";
-                Globals.Winner = "";
-            }
-            else if (Globals.Winner == "tortoise")
-            {
-                lblOut.Text = "Tortoise Wins!";
-                tWins++;
-                lblTWins.Text = tWins.ToString();
-                Globals.Winner = "";
-            }
-            else if (Globals.Winner == "hare")
-            {
-                lblOut.Text = "Hare Wins!";
-                hWins++;
-                lblHWins.Text = hWins.ToString();
-                Globals.Winner = "";
-            }
-
+            Race.Go(distance, MinSpeed);
         }
     }
 }
