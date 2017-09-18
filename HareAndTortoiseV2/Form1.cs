@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace HareAndTortoiseV2
 {
@@ -35,6 +36,11 @@ namespace HareAndTortoiseV2
             MinSpeed = (int)numMinSpeed.Value;
 
             Race.Go(distance, MinSpeed);
+        }
+
+        private void charactorGeneratorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("CharacterGenerator.exe");
         }
     }
 }
