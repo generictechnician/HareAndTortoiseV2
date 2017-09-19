@@ -177,6 +177,7 @@
             this.MinimizeBox = false;
             this.Name = "Form";
             this.Text = "The Hare And The Tortoise Racing";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.numDistance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMinSpeed)).EndInit();
             this.menuStrip1.ResumeLayout(false);
