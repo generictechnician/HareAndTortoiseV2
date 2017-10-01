@@ -35,7 +35,11 @@
             this.lblOut = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.characterGeneratorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newWinnerFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openWinnerFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aZToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.winsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.numDistance)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -111,19 +115,51 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.characterGeneratorToolStripMenuItem});
+            this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(334, 24);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // characterGeneratorToolStripMenuItem
+            // fileToolStripMenuItem
             // 
-            this.characterGeneratorToolStripMenuItem.Name = "characterGeneratorToolStripMenuItem";
-            this.characterGeneratorToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
-            this.characterGeneratorToolStripMenuItem.Text = "Character Generator";
-            this.characterGeneratorToolStripMenuItem.Click += new System.EventHandler(this.charactorGeneratorToolStripMenuItem_Click);
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newWinnerFileToolStripMenuItem,
+            this.openWinnerFileToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // newWinnerFileToolStripMenuItem
+            // 
+            this.newWinnerFileToolStripMenuItem.Name = "newWinnerFileToolStripMenuItem";
+            this.newWinnerFileToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.newWinnerFileToolStripMenuItem.Text = "New Winner File";
+            this.newWinnerFileToolStripMenuItem.Click += new System.EventHandler(this.newWinnerFileToolStripMenuItem_Click);
+            // 
+            // openWinnerFileToolStripMenuItem
+            // 
+            this.openWinnerFileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aZToolStripMenuItem,
+            this.winsToolStripMenuItem});
+            this.openWinnerFileToolStripMenuItem.Name = "openWinnerFileToolStripMenuItem";
+            this.openWinnerFileToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.openWinnerFileToolStripMenuItem.Text = "Open Winner File";
+            // 
+            // aZToolStripMenuItem
+            // 
+            this.aZToolStripMenuItem.Name = "aZToolStripMenuItem";
+            this.aZToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aZToolStripMenuItem.Text = "A to Z";
+            this.aZToolStripMenuItem.Click += new System.EventHandler(this.aZToolStripMenuItem_Click);
+            // 
+            // winsToolStripMenuItem
+            // 
+            this.winsToolStripMenuItem.Name = "winsToolStripMenuItem";
+            this.winsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.winsToolStripMenuItem.Text = "Wins";
+            this.winsToolStripMenuItem.Click += new System.EventHandler(this.winsToolStripMenuItem_Click);
             // 
             // Form
             // 
@@ -142,6 +178,7 @@
             this.Name = "Form";
             this.Text = "The Hare And The Tortoise Racing";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numDistance)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -158,7 +195,11 @@
         private System.Windows.Forms.Label lblOut;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem characterGeneratorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newWinnerFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openWinnerFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aZToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem winsToolStripMenuItem;
     }
 }
 

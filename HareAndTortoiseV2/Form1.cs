@@ -12,6 +12,8 @@ namespace HareAndTortoiseV2
     {
         //Program Wide Vars and Consts
         string fileName = "characters.info";//Default will be changed by user at later date... TODO
+        int noOfRacers = 0;
+        int[] wins = new int[0];
 
         List<string> names = new List<string>();//Create a names list
         List<int> min = new List<int>();//As above but for Minimum speeds
@@ -23,10 +25,8 @@ namespace HareAndTortoiseV2
             InitializeComponent();
         }
 
-        public void btnRace_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)//Get file info on application Load
         {
-            //Variables
-            int distance = 0;
             int text = 0;//for text handling
 
             IEnumerable<string> fileContents = File.ReadLines(fileName);//Get contents of file
@@ -35,35 +35,50 @@ namespace HareAndTortoiseV2
                 //ERROR CHECKING HERE NEEDS!!!!
                 if (i.Contains("name"))
                 {
-                    names.Add(i.Substring(6));//add name sections to list
+                    names.Add(i.Substring(6));//add name sections to list, remove "<name>"
                 }
-                else if (i.Contains("min"))
+                else if (i.Contains("minS"))
                 {
-                    text = Int16.Parse(i.Substring(5));//get text as a number
+                    text = Int16.Parse(i.Substring(6));//get text as a number, remove "<minS>"
                     min.Add(text);//add speed sections to list
                 }
-                else if (i.Contains("max"))
+                else if (i.Contains("maxS"))
                 {
-                    text = Int16.Parse(i.Substring(5));// get text as a number
+                    text = Int16.Parse(i.Substring(6));// get text as a number, remove "<maxS>"
                     max.Add(text);//add minspeed to list
                 }
-                else if (i.Contains("endurance"))
+                else if (i.Contains("endu"))
                 {
-                    text = Int16.Parse(i.Substring(11));//get text as a number
+                    text = Int16.Parse(i.Substring(6));//get text as a number, remove "<endu>"
                     endurance.Add(text);//add endurance sections to list
+
                 }
-                //Add to arrays TODO
+
             }
+            noOfRacers = names.Count;
+            wins = new int[noOfRacers];
+        }
+
+        public void btnRace_Click(object sender, EventArgs e)
+        {
+            //Variables
+            int distance = 0;
             
-
             distance = (int)numDistance.Value;//get the distance of the race from the user
-
-            Race(distance);//RACE
+            if (names.Count == min.Count && min.Count == max.Count && max.Count == endurance.Count)//Check that all lists have the same value if possible... 
+            {
+                
+                Race(distance);//RACE
+            }
+            else
+            {
+                //Clear file and give message
+            }
         }
 
         private void Race(int distance)
         {
-            int noOfRacers = names.Count;
+            
             int movement = 0;
             bool winner = false;
             Random random = new Random();
@@ -74,7 +89,7 @@ namespace HareAndTortoiseV2
             {
                 for (int i = 0; i < noOfRacers; i++)
                 {
-                    if (endurance[i] != 0)
+                    if (endurance[i] > 0)
                     {
                         movement = random.Next(min[i], max[i]);
                         location[i] += movement;
@@ -84,31 +99,37 @@ namespace HareAndTortoiseV2
                     {
                         endurance[i] += (min[i] * 3);
                     }
-                    if (location[i] == distance)
+                    if (location[i] >= distance)
                     {
                         winner = true;
                         lblOut.Text = names[i];
+                        wins[i]++;
                     }
-
-                    
                 }
             }
         }
 
-        private void charactorGeneratorToolStripMenuItem_Click(object sender, EventArgs e)
+        private void newWinnerFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("CharacterGenerator.exe");//Open character creator program
+            //TODO NEW FILES
+        }
+
+        private void aZToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //SORTING WINS
+        }
+
+        private void winsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //List.Sort(names, wins); MAKE WORK
         }
 
         private void Form_FormClosing(object sender, FormClosingEventArgs e)
         {
-            foreach (Process p in System.Diagnostics.Process.GetProcessesByName("CharacterGenerator"))//Ensure that the Character gernerator program closes
+            File.WriteAllText("wins.info", "");
+            for (int i = 0; i < noOfRacers; i++)
             {
-                try
-                {
-                    p.Kill();
-                }
-                catch (InvalidOperationException){}// Closed
+                File.AppendAllText("wins.info", names[i].ToString() + ":" + wins[i].ToString() + Environment.NewLine);
             }
         }
     }
