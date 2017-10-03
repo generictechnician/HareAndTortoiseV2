@@ -150,14 +150,14 @@
             // aZToolStripMenuItem
             // 
             this.aZToolStripMenuItem.Name = "aZToolStripMenuItem";
-            this.aZToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aZToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.aZToolStripMenuItem.Text = "A to Z";
             this.aZToolStripMenuItem.Click += new System.EventHandler(this.aZToolStripMenuItem_Click);
             // 
             // winsToolStripMenuItem
             // 
             this.winsToolStripMenuItem.Name = "winsToolStripMenuItem";
-            this.winsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.winsToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             this.winsToolStripMenuItem.Text = "Wins";
             this.winsToolStripMenuItem.Click += new System.EventHandler(this.winsToolStripMenuItem_Click);
             // 
