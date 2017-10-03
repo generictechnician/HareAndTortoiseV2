@@ -7,7 +7,7 @@
     <ProjectGuid>{5466ADAB-46B0-45C0-922F-2EA245258B3B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>HareAndTortoiseV2</RootNamespace>
-    <AssemblyName>Animal Racing</AssemblyName>
+    <AssemblyName>AnimalRacing</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>2.1.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -94,9 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ErrorCheck.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form1.cs" />
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>

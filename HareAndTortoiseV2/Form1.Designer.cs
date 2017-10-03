@@ -33,7 +33,7 @@
             this.numDistance = new System.Windows.Forms.NumericUpDown();
             this.btnRace = new System.Windows.Forms.Button();
             this.lblOut = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbRace = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newWinnerFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -87,7 +87,7 @@
             // 
             // btnRace
             // 
-            this.btnRace.Location = new System.Drawing.Point(218, 236);
+            this.btnRace.Location = new System.Drawing.Point(218, 349);
             this.btnRace.Name = "btnRace";
             this.btnRace.Size = new System.Drawing.Size(96, 54);
             this.btnRace.TabIndex = 11;
@@ -97,20 +97,23 @@
             // 
             // lblOut
             // 
-            this.lblOut.Location = new System.Drawing.Point(20, 236);
+            this.lblOut.Location = new System.Drawing.Point(20, 349);
             this.lblOut.Name = "lblOut";
             this.lblOut.Size = new System.Drawing.Size(192, 54);
             this.lblOut.TabIndex = 12;
             this.lblOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // richTextBox1
+            // rtbRace
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(17, 112);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(297, 105);
-            this.richTextBox1.TabIndex = 13;
-            this.richTextBox1.Text = "";
+            this.rtbRace.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbRace.Location = new System.Drawing.Point(17, 112);
+            this.rtbRace.MaxLength = 35565;
+            this.rtbRace.Name = "rtbRace";
+            this.rtbRace.ReadOnly = true;
+            this.rtbRace.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbRace.Size = new System.Drawing.Size(297, 222);
+            this.rtbRace.TabIndex = 13;
+            this.rtbRace.Text = "";
             // 
             // menuStrip1
             // 
@@ -128,8 +131,8 @@
             this.newWinnerFileToolStripMenuItem,
             this.openWinnerFileToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.fileToolStripMenuItem.Text = "Winners";
             // 
             // newWinnerFileToolStripMenuItem
             // 
@@ -165,8 +168,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 299);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(334, 415);
+            this.Controls.Add(this.rtbRace);
             this.Controls.Add(this.lblOut);
             this.Controls.Add(this.btnRace);
             this.Controls.Add(this.numDistance);
@@ -174,7 +177,9 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.menuStrip1);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(350, 454);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(350, 454);
             this.Name = "Form";
             this.Text = "The Hare And The Tortoise Racing";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
@@ -193,7 +198,7 @@
         private System.Windows.Forms.NumericUpDown numDistance;
         private System.Windows.Forms.Button btnRace;
         private System.Windows.Forms.Label lblOut;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbRace;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newWinnerFileToolStripMenuItem;
