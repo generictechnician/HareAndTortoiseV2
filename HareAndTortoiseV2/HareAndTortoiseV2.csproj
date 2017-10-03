@@ -7,7 +7,7 @@
     <ProjectGuid>{5466ADAB-46B0-45C0-922F-2EA245258B3B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>HareAndTortoiseV2</RootNamespace>
-    <AssemblyName>Animal Racing</AssemblyName>
+    <AssemblyName>AnimalRacing</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
