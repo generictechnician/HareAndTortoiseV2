@@ -5,11 +5,6 @@ using System.IO;
 
 namespace HareAndTortoiseV2
 {
-    public partial class lists
-    {
-        public static 
-    }
-
     public partial class Form : System.Windows.Forms.Form
     {
         //Program Wide Vars and Consts
@@ -18,7 +13,6 @@ namespace HareAndTortoiseV2
         int[] wins = new int[0];
         bool toLoad = true;
 
-       
         List<string> names = new List<string>();//Create a names list
         List<int> min = new List<int>();//As above but for Minimum speeds
         List<int> max = new List<int>();//As above but for Maximum speeds
@@ -29,61 +23,77 @@ namespace HareAndTortoiseV2
             InitializeComponent();
         }
 
-        public void Form1_Load(object sender, EventArgs e)//Get file info on application Load
+        private void Form1_Load(object sender, EventArgs e)//Get file info on application Load
         {
-            var characters = new List<Tuple<string, int, int, int>> { };
             int text = 0;//for text handling
-            if (File.Exists(fileName))
-            {
-                IEnumerable<string> fileContents = File.ReadLines(fileName);//Get contents of file
-                foreach (string i in fileContents)
+           // try {
+                if (File.Exists(fileName))
                 {
-                    //ERROR CHECKING HERE NEEDS!!!!
-                    if (i.Contains("name"))
+                    IEnumerable<string> fileContents = File.ReadLines(fileName);//Get contents of file
+                    foreach (string i in fileContents)
                     {
-                        try
+                        //ERROR CHECKING HERE NEEDS!!!!
+                        if (i.Contains("name"))
                         {
-                            names.Add(i.Substring(6));//add name sections to list, remove "<name>"
+                            try
+                            {
+                                names.Add(i.Substring(6));//add name sections to list, remove "<name>"
+                            }
+                            catch (Exception)
+                            {
+
+                                throw;
+                            }
+                            
                         }
-                        catch (Exception)
+                        else if (i.Contains("minS"))
                         {
+                            text = Int16.Parse(i.Substring(6));//get text as a number, remove "<minS>"
+                            min.Add(text);//add speed sections to list
+                        }
+                        else if (i.Contains("maxS"))
+                        {
+                            text = Int16.Parse(i.Substring(6));// get text as a number, remove "<maxS>"
+                            max.Add(text);//add minspeed to list
+                        }
+                        else if (i.Contains("endu"))
+                        {
+                            text = Int16.Parse(i.Substring(6));//get text as a number, remove "<endu>"
+                            endurance.Add(text);//add endurance sections to list
 
-                            throw;
                         }
                     }
-                    else if (i.Contains("minS"))
-                    {
-                        text = Int16.Parse(i.Substring(6));//get text as a number, remove "<minS>"
-                        min.Add(text);//add speed sections to list
-                    }
-                    else if (i.Contains("maxS"))
-                    {
-                        text = Int16.Parse(i.Substring(6));// get text as a number, remove "<maxS>"
-                        max.Add(text);//add minspeed to list
-                    }
-                    else if (i.Contains("endu"))
-                    {
-                        text = Int16.Parse(i.Substring(6));//get text as a number, remove "<endu>"
-                        endurance.Add(text);//add endurance sections to list                     }
-                    }
-
+                    noOfRacers = names.Count;
+                    wins = new int[noOfRacers];
                 }
-            }
-            else
+                else
+                {
+                    toLoad = false;
+                    string message = "No file found, Please create one using the Character Generator program. " + Environment.NewLine + "The program will close when you try to Race.";
+                    const string title = "Error! File not found";
+                    MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Question);
+                }
+            /*}
+            catch (FileNotFoundException exception )
             {
                 toLoad = false;
                 string message = "No file found, Please create one using the Character Generator program. " + Environment.NewLine + "The program will close when you try to Race.";
                 const string title = "Error! File not found";
                 MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
-            noOfRacers = names.Count;
-            wins = new int[noOfRacers];
+            catch (Exception exception)
+            {
+
+            }
+            finally
+            {
+                this.TopMost = true;
+            }*/
+            
         }
 
         public void btnRace_Click(object sender, EventArgs e)
         {
-            
-            lblOut.Text = "";//clear output box
             if (toLoad == true)
             {
                 //Variables
@@ -97,7 +107,6 @@ namespace HareAndTortoiseV2
                 }
                 else
                 {
-                    //Give an Error message and give up.
                     string message = "The file was not set up correctly, Please restart the program.";
                     string title = "Something went wrong.";
                     MessageBox.Show(message, title,MessageBoxButtons.OK);
@@ -112,41 +121,33 @@ namespace HareAndTortoiseV2
 
         private void Race(int distance)
         {
-            //Define vars and arrays, Randoms.
             int movement = 0;
-            int roundNo = 1;
             bool winner = false;
             Random random = new Random();
             int[] location = new int[noOfRacers];
 
             //Process
-            while (winner == false)//not got a winner
+            while (winner == false)
             {
-                rtbRace.SelectionAlignment = HorizontalAlignment.Center;
-                rtbRace.AppendText(Environment.NewLine + "Round " + roundNo + Environment.NewLine);//Give user some info.
-                for (int i = 0; i < noOfRacers; i++)//cycle all racers
+                for (int i = 0; i < noOfRacers; i++)
                 {
-
-                    if (endurance[i] > 0)//can they move?
+                    if (endurance[i] > 0)
                     {
-                        movement = random.Next(min[i], max[i]);//move random amount
-                        location[i] += movement;//add to location
-                        endurance[i] -= movement;//take from endurance
-                        
+                        movement = random.Next(min[i], max[i]);
+                        location[i] += movement;
+                        endurance[i] -= movement;
                     }
                     else
                     {
-                        endurance[i] += (min[i] * 3);//increase endurance
+                        endurance[i] += (min[i] * 3);
                     }
-                    if (location[i] >= distance)//has someone got past the line
+                    if (location[i] >= distance)
                     {
-                        winner = true;//exit loop
-                        lblOut.Text = "The winner is the " + names[i] + "!";//give info to user
-                        wins[i]++;//add 1 to win score
+                        winner = true;
+                        lblOut.Text = names[i];
+                        wins[i]++;
                     }
-                    rtbRace.AppendText(names[i] + ": " + location[i] + Environment.NewLine);
                 }
-                roundNo++;//iteration of round no.
             }
         }
 
