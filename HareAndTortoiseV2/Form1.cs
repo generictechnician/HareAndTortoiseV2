@@ -29,32 +29,33 @@ namespace HareAndTortoiseV2
             if (File.Exists(fileName))
             {
                 IEnumerable<string> fileContents = File.ReadLines(fileName);//Get contents of file
-                foreach (string i in fileContents)
+                foreach (string s in fileContents)
                 {
                     //ERROR CHECKING HERE NEEDS!!!!
-                    if (i.Contains("name"))
+                    if (s.Contains("name"))
                     {
-                        names.Add(i.Substring(6));//add name sections to list, remove "<name>"
+                        names.Add(s.Substring(6));//add name sections to list, remove "<name>"
                     }
-                    else if (i.Contains("minS"))
+                    else if (s.Contains("minS"))
                     {
-                        text = Int16.Parse(i.Substring(6));//get text as a number, remove "<minS>"
+                        text = Int16.Parse(s.Substring(6));//get text as a number, remove "<minS>"
                         min.Add(text);//add speed sections to list
                     }
-                    else if (i.Contains("maxS"))
+                    else if (s.Contains("maxS"))
                     {
-                        text = Int16.Parse(i.Substring(6));// get text as a number, remove "<maxS>"
+                        text = Int16.Parse(s.Substring(6));// get text as a number, remove "<maxS>"
                         max.Add(text);//add minspeed to list
                     }
-                    else if (i.Contains("endu"))
+                    else if (s.Contains("endu"))
                     {
-                        text = Int16.Parse(i.Substring(6));//get text as a number, remove "<endu>"
+                        text = Int16.Parse(s.Substring(6));//get text as a number, remove "<endu>"
                         endurance.Add(text);//add endurance sections to list
 
                     }
                 }
                 noOfRacers = names.Count;
                 wins = new int[noOfRacers];
+                win = new bool[noOfRacers];
             }
             else
             {
@@ -97,9 +98,11 @@ namespace HareAndTortoiseV2
             int movement = 0;
             int round = 1;
             bool winner = false;
+            string winners = "";
             Random random = new Random();
             int[] location = new int[noOfRacers];
 
+            lblOut.Text = "The winner is the ";
             //Process
             while (winner == false)
             {
@@ -119,7 +122,7 @@ namespace HareAndTortoiseV2
                     if (location[i] >= distance)
                     {
                         winner = true;
-                        lblOut.Text = "The winner is the " + names[i] + "!";
+                        lblOut.Text += names[i] 
                         wins[i]++;
                     }
                     rtbRace.AppendText(names[i] + ": " + location[i] + Environment.NewLine);
