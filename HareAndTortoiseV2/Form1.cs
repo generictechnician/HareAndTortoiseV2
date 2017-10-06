@@ -55,7 +55,6 @@ namespace HareAndTortoiseV2
                 }
                 noOfRacers = names.Count;
                 wins = new int[noOfRacers];
-                win = new bool[noOfRacers];
             }
             else
             {
@@ -97,14 +96,13 @@ namespace HareAndTortoiseV2
         {
             int movement = 0;
             int round = 1;
-            bool winner = false;
-            string winners = "";
+            int winners = 0;
+            string winner = "";
             Random random = new Random();
             int[] location = new int[noOfRacers];
 
-            lblOut.Text = "The winner is the ";
             //Process
-            while (winner == false)
+            while (winner == "")
             {
                 rtbRace.AppendText(Environment.NewLine + "Round " + round + Environment.NewLine);
                 for (int i = 0; i < noOfRacers; i++)
@@ -121,13 +119,22 @@ namespace HareAndTortoiseV2
                     }
                     if (location[i] >= distance)
                     {
-                        winner = true;
-                        lblOut.Text += names[i] 
+                        winner = names[i];
+                        winners++;
                         wins[i]++;
                     }
                     rtbRace.AppendText(names[i] + ": " + location[i] + Environment.NewLine);
                 }
                 round++;
+            }
+
+            if (winners > 1)
+            {
+                lblOut.Text = "The Winner is " + winner;
+            }
+            else
+            {
+                lblOut.Text = "It's A Draw!";
             }
         }
 
